@@ -1,0 +1,1 @@
+00 12 01 * * /usr/bin/python3.6 script_path/script_to_schedule.py > output_log_file_path/stdout.log 2>error_log_path/stderr.log
