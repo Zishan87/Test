@@ -2,7 +2,7 @@
 
 ## Architecture
 
-We use 'Models' package to define all constant in terms of Enum class.
+I used 'Models' package to define all constant in terms of Enum class.
 'Services' package provides data processing functionalities - Staging, filtering, transformation and writing to csv.
 script file 'script_to_schedule.py' calls writing function from 'Services'. We can schedule this file to the scheduler to run.
 
@@ -28,11 +28,11 @@ The 'niit_usecase.py' also consist one more function 'write_csv()' to write the 
 
 ## Guideline to run the script
 
--- without cronjob 
+without cronjob 
 Go to the path '/Test/'
 python3.6 script_to_schedule.py
 
---with cron job
+with cron job
 configure cronjob in crontab editor as schedule_job.tab (you can customize scheduled time as per requirement.)
 edit 'script_to_schedule.py' to sink 'filter_condition' parameter from 'stdout.log' log file.
 
