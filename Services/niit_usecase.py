@@ -90,7 +90,7 @@ class DataProcessing:
 
 		return df
 
-	def write_csv(self,transform_function,output_columns,url,filter_condition,output_file_name):
+	def write_csv(self,transform_function,output_columns,url,filter_condition,output_file_path):
 		df = transform_function(url,filter_condition)
 		df.columns = output_columns
-		return df.to_csv(output_file_name)
+		return df.to_csv(output_file_path,index=False)
