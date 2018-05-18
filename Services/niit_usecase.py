@@ -7,6 +7,8 @@ class DataProcessing:
 	def __init__(self):
 		pass
 	
+	# This method will read raw input data from specified url. Here I named column as column1,column2,column3... and so on
+	# according to number of columns in input file.This function returns a datadrame containing all input data.
 	@staticmethod
 	def parse_data(url):
 		df = pd.read_excel(url,header=None)
@@ -17,6 +19,8 @@ class DataProcessing:
 		df.columns = input_columns
 		return df
 
+	# This method is used to filter and transform data read from 1st input url according to the corresponding defined logic.
+	# And it returns dataframe containg desired output with indexes.
 	@classmethod
 	def usecase1_filter_and_transform(cls,url,filter_condition):
 		df = cls.parse_data(url)
@@ -59,6 +63,8 @@ class DataProcessing:
 
 		return df
 
+	# This method is used to filter and transform data read from 2nd input url according to the corresponding defined logic.
+	# And it returns dataframe containg desired output with indexes.
 	@classmethod
 	def usecase2_filter_and_transform(cls,url,filter_condition):
 		df = cls.parse_data(url)
@@ -90,6 +96,8 @@ class DataProcessing:
 
 		return df
 
+	# This function will write the final transformed data from dataframe without indexes into csv file as per the 
+	# desired output columns name.
 	def write_csv(self,transform_function,output_columns,url,filter_condition,output_file_path):
 		df = transform_function(url,filter_condition)
 		df.columns = output_columns
